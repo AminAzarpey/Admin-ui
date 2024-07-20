@@ -5,6 +5,8 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "strict": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -21,7 +23,33 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@admin-ui/shared/components": [
+        "src/app/shared/components/index.ts"
+      ],
+      "@admin-ui/shared/directives": [
+        "src/app/shared/directives/index.ts"
+      ],
+      "@admin-ui/shared/pipes": [
+        "src/app/shared/pipes/index.ts"
+      ],
+      "@admin-ui/core/adapters": [
+        "src/app/core/adapters/index.ts"
+      ],
+      "@admin-ui/core/auth": [
+        "src/app/core/auth/index.ts"
+      ],
+      "@admin-ui/core/interceptors": [
+        "src/app/core/interceptors/index.ts"
+      ],
+      "@admin-ui/core/providers": [
+        "src/app/core/providers/index.ts"
+      ],
+      "@admin-ui/core/services": [
+        "src/app/core/services/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
