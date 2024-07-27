@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss',
 })
-export class SideBarComponent {}
+export class SideBarComponent implements OnInit {
+  @Input('mode') mode: 'compact' | 'comprehensive' | 'minimal' = 'minimal';
+
+  ngOnInit() {}
+}

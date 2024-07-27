@@ -1,1 +1,18 @@
-<p>basic-drawer works!</p>
+<div
+  [class.open]="drawerService.isOpen"
+  [ngClass]="[data.size, data.position]"
+  class="drawer"
+>
+  <div class="drawer-content">
+    <ng-container *ngIf="data?.component">
+      <ng-container
+        *ngComponentOutlet="data.component; injector: data['injector']"
+      ></ng-container>
+    </ng-container>
+  </div>
+</div>
+<div
+  (click)="drawerService.close()"
+  *ngIf="drawerService.isOpen"
+  class="drawer-backdrop"
+></div>

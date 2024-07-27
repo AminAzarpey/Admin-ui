@@ -1,0 +1,37 @@
+<div class="w-full h-screen flex">
+  <!-- Sidebar -->
+  <app-side-bar
+    [mode]="'compact'"
+    class="w-[300px] bg-amber-500 h-full fixed top-0 left-0 transition-all duration-300"
+  >
+  </app-side-bar>
+
+  <!-- Main Content -->
+  <div
+    class="flex-1 bg-blue-500 min-h-screen transition-all duration-300 ml-[300px]"
+  >
+    <!-- Header -->
+    <header
+      class="bg-white shadow-md fixed top-0 left-[300px] right-0 z-10 p-4 flex justify-between items-center"
+    >
+      <h1 class="text-lg font-bold">Main Header</h1>
+      <button
+        (click)="openDrawerWithForm('right')"
+        class="bg-gray-800 text-white px-4 py-2 rounded"
+      >
+        toggle From drawer
+      </button>
+      <button
+        (click)="openDrawerWithMenu('left')"
+        class="bg-gray-800 text-white px-4 py-2 rounded"
+      >
+        toggle drawer
+      </button>
+    </header>
+
+    <!-- Body Content -->
+    <div class="pt-20 p-4">
+      <p class="text-white">This is the main content area.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in;
+  z-index: 1000;
+  overflow-y: auto;
+
+  &.right {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &.md {
+    width: 250px;
+  }
+
+  &.lg {
+    width: 400px;
+  }
+
+  &.xl {
+    width: 600px;
+  }
+
+  &.open.right {
+    animation: slideInRight 0.2s forwards;
+  }
+
+  &.open.left {
+    animation: slideInLeft 0.2s forwards;
+  }
+
+  &.close.right {
+    animation: slideOutRight 0.2s forwards;
+  }
+
+  &.close.left {
+    animation: slideOutLeft 0.2s forwards;
+  }
+}
+
+.drawer-content {
+  padding: 16px;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Keyframe animations for smooth transitions */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
