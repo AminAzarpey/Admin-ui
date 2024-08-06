@@ -1,7 +1,10 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
+
 // Plus imports for other components in your app.
+@use "sass:map";
+@import "m3-theme";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -25,14 +28,17 @@ $admin-ui-theme: mat.define-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-:root {
-  @include mat.all-component-themes($admin-ui-theme);
+body {
+  @include mat.all-component-themes($light-theme);
+}
+
+.dark body {
+  @include mat.all-component-themes($dark-theme);
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
 // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
 // @include mat.typography-hierarchy($admin-ui-theme);
-
 // Comment out the line below if you want to use the deprecated `color` inputs.
 // @include mat.color-variants-backwards-compatibility($admin-ui-theme);
 /* You can add global styles to this file, and also import other style files */
@@ -49,7 +55,40 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --bg-theme: #f6f6f6;
+  --primary-color: #6391de;
+  --custom-orange-primary: #f88e66;
+}
+
+body.dark-theme {
+  --bg-theme: #1a1a1a;
+  --primary-color: #6391de;
+  --custom-orange-primary: #f88e66;
+}
+
+.bg-primary-60 {
+  background-color: var(--primary-color);
+}
+
+.bg-surface {
+  background-color: map.get(map.get($_palettes, neutral), 100);
+}
+
+.text-on-surface {
+  color: map.get(map.get($_palettes, neutral), 10);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.text-on-primary {
+  color: map.get(map.get($_palettes, primary), 100);
 }

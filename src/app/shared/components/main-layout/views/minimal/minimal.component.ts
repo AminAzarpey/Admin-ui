@@ -6,17 +6,20 @@ import {
   BasicDrawerComponent,
   BasicFormComponent,
 } from '@admin-ui/shared/components';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ThemeService } from '../../../../services/theme.service';
 
 @Component({
   selector: 'app-minimal',
   standalone: true,
-  imports: [SideBarComponent, BasicDrawerComponent],
+  imports: [SideBarComponent, BasicDrawerComponent, MatSidenavModule],
   templateUrl: './minimal.component.html',
   styleUrl: './minimal.component.scss',
 })
 export class MinimalComponent {
   constructor(
     private drawerService: DrawerService,
+    private themeService: ThemeService,
     private injector: Injector,
   ) {}
 
@@ -32,5 +35,20 @@ export class MinimalComponent {
       component: BasicBreadcrumbComponent,
       injector: this.injector,
     });
+  }
+
+  toggleTheme() {
+    const newTheme =
+      this.themeService.getCurrentThemePreference() === 'light'
+        ? 'dark-theme'
+        : 'light-theme';
+    this.themeService.updateCSSVariables(newTheme);
+  }
+
+  changePrimaryColor(color: string) {
+    document.documentElement.style.setProperty(
+      '--primary-color',
+      `var(--${color})`,
+    );
   }
 }

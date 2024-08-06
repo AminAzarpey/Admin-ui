@@ -2,36 +2,44 @@
   <!-- Sidebar -->
   <app-side-bar
     [mode]="'compact'"
-    class="w-[300px] bg-amber-500 h-full fixed top-0 left-0 transition-all duration-300"
+    class="w-[300px] h-full fixed top-0 left-0 transition-all duration-300 bg-primary"
   >
   </app-side-bar>
 
   <!-- Main Content -->
   <div
-    class="flex-1 bg-blue-500 min-h-screen transition-all duration-300 ml-[300px]"
+    class="flex-1 bg-theme min-h-screen transition-all duration-300 ml-[300px]"
   >
     <!-- Header -->
     <header
-      class="bg-white shadow-md fixed top-0 left-[300px] right-0 z-10 p-4 flex justify-between items-center"
+      class="bg-surface shadow-md fixed top-0 left-[300px] right-0 z-10 p-4 flex justify-between items-center"
     >
-      <h1 class="text-lg font-bold">Main Header</h1>
-      <button
-        (click)="openDrawerWithForm('right')"
-        class="bg-gray-800 text-white px-4 py-2 rounded"
-      >
-        toggle From drawer
-      </button>
-      <button
-        (click)="openDrawerWithMenu('left')"
-        class="bg-gray-800 text-white px-4 py-2 rounded"
-      >
-        toggle drawer
-      </button>
+      <h1 class="text-lg font-bold text-on-surface">Main Header</h1>
+      <div>
+        <button
+          (click)="toggleTheme()"
+          class="bg-primary text-on-primary px-4 py-2 rounded mr-2"
+        >
+          Toggle Theme
+        </button>
+        <button
+          (click)="changePrimaryColor('primary')"
+          class="bg-primary text-white px-4 py-2 rounded mr-2"
+        >
+          Custom Primary 1
+        </button>
+        <button
+          (click)="changePrimaryColor('customOrangePrimary')"
+          class="bg-customOrangePrimary text-white px-4 py-2 rounded"
+        >
+          Custom Primary 2
+        </button>
+      </div>
     </header>
 
     <!-- Body Content -->
     <div class="pt-20 p-4">
-      <p class="text-white">This is the main content area.</p>
+      <p class="text-on-primary">This is the main content area.</p>
     </div>
   </div>
 </div>
