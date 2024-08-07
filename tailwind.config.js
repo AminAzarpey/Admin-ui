@@ -5,7 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        theme: "var(--bg-theme)",
+        theme: {
+          750: "var(--bg-theme-750)",
+          350: "var(--bg-theme-350)",
+          DEFAULT: "var(--bg-theme)",
+        },
         primary: "var(--primary-color)",
       },
     },

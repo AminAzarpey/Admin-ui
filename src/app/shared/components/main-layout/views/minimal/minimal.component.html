@@ -12,27 +12,43 @@
   >
     <!-- Header -->
     <header
-      class="bg-surface shadow-md fixed top-0 left-[300px] right-0 z-10 p-4 flex justify-between items-center"
+      class="bg-theme-350 shadow-md fixed top-0 left-[300px] right-0 z-10 p-4 flex justify-between items-center"
     >
       <h1 class="text-lg font-bold text-on-surface">Main Header</h1>
       <div>
         <button
-          (click)="toggleTheme()"
+          appTheme
           class="bg-primary text-on-primary px-4 py-2 rounded mr-2"
         >
           Toggle Theme
         </button>
         <button
-          (click)="changePrimaryColor('primary')"
+          appChangePrimaryColor="#de6363"
           class="bg-primary text-white px-4 py-2 rounded mr-2"
         >
-          Custom Primary 1
+          Red Primary
         </button>
         <button
-          (click)="changePrimaryColor('customOrangePrimary')"
-          class="bg-customOrangePrimary text-white px-4 py-2 rounded"
+          appChangePrimaryColor="#48976a"
+          class="bg-primary text-white px-4 py-2 rounded mr-2"
         >
-          Custom Primary 2
+          Green Primary
+        </button>
+        <button
+          [drawerPosition]="'left'"
+          [drawerType]="'form'"
+          appDrawer
+          class="bg-primary text-white px-4 py-2 rounded mr-2"
+        >
+          left drawer
+        </button>
+        <button
+          [drawerPosition]="'right'"
+          [drawerType]="'form'"
+          appDrawer
+          class="bg-primary text-white px-4 py-2 rounded mr-2"
+        >
+          right drawer
         </button>
       </div>
     </header>

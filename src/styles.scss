@@ -28,13 +28,6 @@ $admin-ui-theme: mat.define-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-body {
-  @include mat.all-component-themes($light-theme);
-}
-
-.dark body {
-  @include mat.all-component-themes($dark-theme);
-}
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
 // For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
@@ -63,14 +56,20 @@ body {
 
 :root {
   --bg-theme: #f6f6f6;
+  --bg-theme-750: #f6f6f6bf;
+  --bg-theme-350: #f6f6f659;
   --primary-color: #6391de;
   --custom-orange-primary: #f88e66;
+  @include mat.all-component-themes($light-theme);
 }
 
 body.dark-theme {
   --bg-theme: #1a1a1a;
+  --bg-theme-750: #2c2c2cbf;
+  --bg-theme-350: #68686859;
   --primary-color: #6391de;
   --custom-orange-primary: #f88e66;
+  @include mat.all-component-colors($dark-theme);
 }
 
 .bg-primary-60 {

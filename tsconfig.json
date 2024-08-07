@@ -39,6 +39,9 @@
       "@admin-ui/shared/pipes": [
         "src/app/shared/pipes/index.ts"
       ],
+      "@admin-ui/shared/services": [
+        "src/app/shared/services/index.ts"
+      ],
       "@admin-ui/core/adapters": [
         "src/app/core/adapters/index.ts"
       ],

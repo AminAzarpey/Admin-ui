@@ -17,9 +17,13 @@ export class ThemeService {
   updateCSSVariables(theme: string) {
     if (theme === 'dark-theme') {
       document.documentElement.style.setProperty('--bg-theme', '#1a1a1a'); // Dark theme primary color
+      document.documentElement.style.setProperty('--bg-theme-750', '#2C2C2CBF');
+      document.documentElement.style.setProperty('--bg-theme-350', '#68686859');
       localStorage.setItem(this.storageKey, 'dark');
     } else {
       document.documentElement.style.setProperty('--bg-theme', '#f6f6f6');
+      document.documentElement.style.setProperty('--bg-theme-750', '#F6F6F6BF');
+      document.documentElement.style.setProperty('--bg-theme-350', '#F6F6F659');
       localStorage.setItem(this.storageKey, 'light');
       // Light theme primary color
     }
